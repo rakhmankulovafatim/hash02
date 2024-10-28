@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .column {
+            width: 48%;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="column">
+        <form id="leftForm">
+            <div class="mb-3">
+                <label for="secretKeyInput" class="form-label">Секретный ключ</label>
+                <input type="text" class="form-control" id="secretKeyInput" placeholder="Введите секретный ключ" required>
+            </div>
+            <div class="mb-3">
+                <label for="publicKeyInputLeft" class="form-label">Публичный ключ</label>
+                <input type="text" class="form-control" id="publicKeyInputLeft" placeholder="Введите ваш публичный ключ" required>
+            </div>
+            <div class="mb-3">
+                <label for="messageInputLeft" class="form-label">Сообщение</label>
+                <input type="text" class="form-control" id="messageInputLeft" placeholder="Введите ваше сообщение" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+        <div class="output">
+            
+            <div>Секретный ключ: <span id="receivedSecretKeyLeft"></span></div>
+            <div>Публичный ключ: <span id="receivedPublicKeyLeft"></span></div>
+            <div>Сообщение: <span id="receivedMessageLeft"></span></div>
+        </div>
+    </div>
+
+    <div class="column">
+        <form id="rightForm">
+            <div class="mb-3">
+                <label for="publicKeyInputRight" class="form-label">Публичный ключ</label>
+                <input type="text" class="form-control" id="publicKeyInputRight" placeholder="Введите ваш публичный ключ" required>
+            </div>
+            <div class="mb-3">
+                <label for="messageInputRight" class="form-label">Сообщение</label>
+                <input type="text" class="form-control" id="messageInputRight" placeholder="Введите ваше сообщение" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+        <div class="output">
+            
+            <div>Публичный ключ: <span id="receivedPublicKeyRight"></span></div>
+            <div>Сообщение: <span id="receivedMessageRight"></span></div>
+        </div>
+    </div>
+</div>
+
+<script src="hashGenerator.js"></script>
+</body>
+</html>
